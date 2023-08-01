@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { SuperHero } from './models/superHero';
+import { SuperHeroService } from './services/super-hero.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'APP';
+  heroes: SuperHero[] = [];
+
+  constructor(private superHeroService: SuperHeroService) {}
+
+  ngOnInit() : void {
+    this.heroes = this.superHeroService.getSuperHeroes();
+    console.log(this.heroes);
+  }
 }
