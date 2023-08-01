@@ -1,19 +1,18 @@
-<div class="flex justify-center text-white mt-20">
-  <div class="w-96">
-    <div class="grid grid-cols-4 font-bold bg-red-500 p-2 rounded-t-xl">
-      <div class="flex justify-center"> Name </div>
-      <div class="flex justify-center"> First Name </div>
-      <div class="flex justify-center"> Last Name </div>
-      <div class="flex justify-center"> Place </div>
-    </div>
-    <div class="grid grid-cols-4 bg-blue-500 p-2 rounded-b-xl" *ngFor="let hero of heroes">
-      <div class="flex justify-center"> {{ hero.name }} </div>
-      <div class="flex justify-center"> {{ hero.firstName }} </div>
-      <div class="flex justify-center"> {{ hero.lastName }} </div>
-      <div class="flex justify-center"> {{ hero.place }} </div>
-    </div>
+<div class="mx-auto w-96 mt-20 text-white">
+  <div class="grid grid-cols-4 font-bold bg-red-500 p-2 rounded-t-xl">
+    <div class="flex justify-center"> Name </div>
+    <div class="flex justify-center"> First Name </div>
+    <div class="flex justify-center"> Last Name </div>
+    <div class="flex justify-center"> Place </div>
+  </div>
+  <div class="grid grid-cols-4 bg-blue-500 p-2 rounded-b-xl" *ngFor="let hero of heroes">
+    <div class="flex justify-center"> {{ hero.name }} </div>
+    <div class="flex justify-center"> {{ hero.firstName }} </div>
+    <div class="flex justify-center"> {{ hero.lastName }} </div>
+    <div class="flex justify-center"> {{ hero.place }} </div>
   </div>
 </div>
+
 
 <table>
   <thead >
