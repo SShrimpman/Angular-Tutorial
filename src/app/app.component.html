@@ -1,32 +1,23 @@
-<div class="mx-auto w-96 mt-20 text-white">
-  <div class="grid grid-cols-4 font-bold bg-red-500 p-2 rounded-t-xl">
+<div class="mx-auto w-900 mt-20 text-white">
+  <button (click)="initNewHero()" class="bg-green-500 p-2 rounded-lg mb-10">Create New Hero</button>
+  <div class="grid grid-cols-5 font-bold bg-red-500 p-2 rounded-t-xl">
     <div class="flex justify-center"> Name </div>
     <div class="flex justify-center"> First Name </div>
     <div class="flex justify-center"> Last Name </div>
     <div class="flex justify-center"> Place </div>
+    <div></div>
   </div>
-  <div class="grid grid-cols-4 bg-blue-500 p-2 rounded-b-xl" *ngFor="let hero of heroes">
-    <div class="flex justify-center"> {{ hero.name }} </div>
-    <div class="flex justify-center"> {{ hero.firstName }} </div>
-    <div class="flex justify-center"> {{ hero.lastName }} </div>
-    <div class="flex justify-center"> {{ hero.place }} </div>
+  <div class="bg-blue-500 p-2 space-y-2 rounded-b-xl">
+    <div class="grid grid-cols-5" *ngFor="let hero of heroes">
+      <div class="flex justify-center"> {{ hero.name }} </div>
+      <div class="flex justify-center"> {{ hero.firstName }} </div>
+      <div class="flex justify-center"> {{ hero.lastName }} </div>
+      <div class="flex justify-center"> {{ hero.place }} </div>
+      <div class="flex justify-center space-x-2">
+        <button (click)="editHero(hero)" class="bg-yellow-500 hover:bg-yellow-700 p-2 rounded-lg">Edit</button>
+      </div>
+    </div>
   </div>
 </div>
 
-
-<table>
-  <thead >
-    <th>Name</th>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Place</th>
-  </thead>
-  <tbody class="space-x-1">
-    <tr *ngFor="let hero of heroes">
-      <td>{{ hero.name }}</td>
-      <td>{{ hero.firstName }}</td>
-      <td>{{ hero.lastName }}</td>
-      <td>{{ hero.place }}</td>
-    </tr>
-  </tbody>
-</table>
+<app-edit-hero [hero]="heroToEdit" (heroesUpdated)="updateHeroList($event)"></app-edit-hero>

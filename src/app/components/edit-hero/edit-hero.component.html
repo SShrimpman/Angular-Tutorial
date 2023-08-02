@@ -1,0 +1,26 @@
+<div *ngIf="hero" class="mt-20 mx-auto w-500 bg-gray-500 rounded-xl">
+    <h2 class="flex justify-center p-2 text-xl text-orange-500">{{ hero.name }}</h2>
+    <div class="m-4 space-y-2 text-white">
+        <div>
+            Name:
+            <input [(ngModel)]="hero.name" class="ml-2 pl-2 text-black bg-gray-400 rounded border" placeholder="Name"/>
+        </div>
+        <div>
+            First Name:
+            <input [(ngModel)]="hero.firstName" class="ml-2 pl-2 text-black bg-gray-400 rounded border" placeholder="Firs Name"/>
+        </div>
+        <div>
+            Last Name:
+            <input [(ngModel)]="hero.lastName" class="ml-2 pl-2 text-black bg-gray-400 rounded border" placeholder="Last Name"/>
+        </div>
+        <div>
+            Place:
+            <input [(ngModel)]="hero.place" class="ml-2 pl-2 text-black bg-gray-400 rounded border" placeholder="Place"/>
+        </div>
+    </div>
+    <div class="flex justify-center p-4 space-x-2 text-white">
+        <button (click)="createHero(hero)" *ngIf="!hero.id" class="bg-green-500 hover:bg-green-700 p-2 rounded-lg">Create</button>
+        <button (click)="updateHero(hero)" *ngIf="hero.id" class="bg-blue-500 hover:bg-blue-700 p-2 rounded-lg">Save</button>
+        <button (click)="deleteHero(hero)" *ngIf="hero.id" class="bg-red-500 hover:bg-red-700 p-2 rounded-lg">Delete</button>
+    </div>
+</div>
